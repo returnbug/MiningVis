@@ -1,11 +1,11 @@
 <template>
     <div>
         <div>
-            <a style="margin-left: 110px; font-size: 15px;">Statistics:</a>
+            <a style="margin-left: 110px; font-size: 14px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Statistics:</a>
             <el-select v-model="value" placeholder="Select" style="width: 250px; margin-left: 10px; margin-top: -3px;">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
             </el-select>
-            <a style="margin-left: 20px; font-size: 15px;">Select Date:</a>
+            <a style="margin-left: 20px; font-size: 14px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600" >Select Date:</a>
             <el-date-picker v-model="value1" type="monthrange" range-separator="To" start-placeholder="Start month"
                 end-placeholder="End month" style="margin-left: 10px; margin-top: -3px;" />
             <el-button style="margin-left: 20px; margin-top: -3px;" color="#A5673F" @click="btn_reset">Reset</el-button>

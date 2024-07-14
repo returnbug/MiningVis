@@ -10,7 +10,7 @@
         </div>
         <div class="ribbon1-after">&nbsp;</div>
         <div class="time-select" style="height: 100px; margin-left: 24px; margin-top: -55px;">
-          <TimeAxis/>
+          <TimeAxis />
         </div>
       </el-col>
       <el-col :span="4">
@@ -40,7 +40,7 @@
           </div>
           <div class="ribbon2-after">&nbsp;</div>
           <div class="mining-distribution" style="height: 450px; margin-left: 24px; margin-top: -55px;">
-            <MiningDistribution/>
+            <MiningDistribution />
           </div>
         </div>
         <div>
@@ -49,31 +49,42 @@
           </div>
           <div class="ribbon3-after">&nbsp;</div>
           <div class="bitcoin-news" style="height: 240px; margin-left: 24px; margin-top: -55px;">
+            <BitcoinNews />
           </div>
         </div>
       </el-col>
       <el-col :span="8">
         <div>
           <div class="ribbon4">
-            <a style="margin-right: 12px; margin-top: 4px;">Mining pools</a>
+            <a style="margin-right: 12px; margin-top: 4px;">{{ title }}</a>
           </div>
           <div class="ribbon4-after">&nbsp;</div>
-          <div class="mining-pools" :style="{ height: miningPoolsHeight + 'px', marginLeft: '24px', marginTop: '-55px' }"></div>
+          <div class="mining-pools"
+            :style="{ height: miningPoolsHeight + 'px', marginLeft: '24px', marginTop: '-55px' }">
+            <div style="margin-left: 100px">
+              <el-radio-group v-model="radio" @change="handleRadioChange" fill="#f2f2f2" text-color="#000">
+                <el-radio-button label="Mining pools" value="1" />
+                <el-radio-button label="Bitcoin statistics" value="2" />
+              </el-radio-group>
+            </div>
+          </div>
         </div>
         <div>
           <div class="ribbon5">
             <a style="margin-right: 12px; margin-top: 4px;">Cross pooling</a>
           </div>
           <div class="ribbon5-after">&nbsp;</div>
-          <div class="cross-pooling" :style="{ height: crossPoolingHeight + 'px', marginLeft: '24px', marginTop: '-55px' }">
+          <div class="cross-pooling"
+            :style="{ height: crossPoolingHeight + 'px', marginLeft: '24px', marginTop: '-55px' }">
             <div style="display: flex; align-items: center;">
-              <a style="margin-left: 100px; font-weight: 500;">Measure:</a>
+              <a
+                style="margin-left: 100px; font-size: 14px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Measure:</a>
               <el-select v-model="value5" placeholder="Select" style="width: 200px; margin-left: 10px;">
                 <el-option v-for="item in options5" :key="item.value" :label="item.label" :value="item.value" />
               </el-select>
               <el-button style="margin-left: auto;" color="#E0E1E2" @click="btn_5">{{ btn_5_text }}</el-button>
             </div>
-            <CrossPooling v-show="showPool===1"/>
+            <CrossPooling v-show="showPool === 1" />
           </div>
         </div>
       </el-col>
@@ -90,12 +101,15 @@ import ethereum from '@/assets/image/ethereum.png'
 import TimeAxis from './components/TimeAxis.vue'
 import CrossPooling from './components/CrossPooling.vue'
 import MiningDistribution from './components/MiningDistribution.vue'
+import BitcoinNews from './components/BitcoinNews.vue'
 
 onMounted(() => {
   document.body.style.setProperty('--el-color-primary', '#038687');
   document.body.style.setProperty('--el-color-primary-light-9', '#e9f0f0');
   document.body.style.setProperty('--el-color-primary-light-3', '#1ba9aa');
 })
+const title = ref('Mining pools')
+const radio = ref('1')
 const crossPoolingHeight = ref(345)
 const miningPoolsHeight = ref(345)
 const isHidden = ref(false)
@@ -132,9 +146,17 @@ const btn_5 = () => {
   isHidden.value = !isHidden.value
 }
 
+const handleRadioChange = (value) => {
+  if (value === '1') {
+    title.value = 'Mining pools';
+  } else if (value === '2') {
+    title.value = 'Bitcoin statistics';
+  }
+};
+
 </script>
 
-<style>
+<style scoped>
 .ribbon1 {
   --f: 13px;
   --t: 10px;
@@ -289,9 +311,9 @@ const btn_5 = () => {
   border: 1px solid #dededf;
   padding: 10px;
   border-radius: 4px;
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1), 
-              4px 0 4px -2px rgba(0, 0, 0, 0.1), 
-              -4px 0 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1),
+    4px 0 4px -2px rgba(0, 0, 0, 0.1),
+    -4px 0 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .mining-distribution,
@@ -304,4 +326,11 @@ const btn_5 = () => {
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
+::v-deep .el-radio-button__inner {
+  border: 2 !important;
+  font-size: 12px;
+  font-weight: 400;
+  color: #696969;
+  line-height: 14px;
+}
 </style>
