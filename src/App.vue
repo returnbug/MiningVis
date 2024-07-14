@@ -18,11 +18,13 @@
           <el-image fit="cover" :src="url2" style="margin-top: 10px;"></el-image>
         </div>
         <div style="margin-top: 20px; margin-left: 15%">
-          <el-button color="#D0D1D2" plain style="color:rgb(81, 81, 81);">
-            <el-image style="height: 20px; width: 20px; margin-right: 5px;" fit="cover" :src="url"></el-image>
-            Github
-          </el-button>
-          <el-button color="#D0D1D2" plain style="color:rgb(81, 81, 81);">
+          <a href="https://github.com/returnbug/MiningVis" target="_blank" rel="noopener noreferrer">
+            <el-button color="#D0D1D2" plain style="color:rgb(81, 81, 81);">
+              <el-image style="height: 20px; width: 20px; margin-right: 5px;" fit="cover" :src="url"></el-image>
+              Github
+            </el-button>
+          </a>
+          <el-button color="#D0D1D2" plain style="color:rgb(81, 81, 81); margin-left: 10px;">
             <el-image style="height: 20px; width: 20px; margin-top: 3px; margin-right: 5px;" fit="cover"
               :src="url1"></el-image>
             Contact us
