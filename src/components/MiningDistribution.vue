@@ -95,8 +95,8 @@
                         <a style="font-size: 14px; margin-top: -3px; margin-left: 2px;">others</a>
                     </div>
                 </el-col>
-                <el-col :span="20" style="margin-left: 20px; margin-top: -30px;">
-                    <div id="chart" style="height: 480px; width: 106%;"></div>
+                <el-col :span="20" style="margin-left: 20px; ">
+                    <div id="chart" style="height: 480px; width: 106%; margin-top: -30px;"></div>
                 </el-col>
             </el-row>
         </div>
@@ -198,118 +198,6 @@ const selectAll = () => {
     });
 }
 
-//     'Orange',
-//     'Tomato',
-//     'Apple',
-//     'Sakana',
-//     'Banana',
-//     'Iwashi',
-//     'Snappy Fish',
-//     'Lemon',
-//     'Pasta'
-// ];
-// const years = ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', 
-//               '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', 
-//               '2021', '2022', '2023', '2024'];
-// const shuffle = (array) => {
-//     let currentIndex = array.length;
-//     let randomIndex = 0;
-//     while (currentIndex > 0) {
-//         randomIndex = Math.floor(Math.random() * currentIndex);
-//         currentIndex--;
-//         [array[currentIndex], array[randomIndex]] = [
-//             array[randomIndex],
-//             array[currentIndex]
-//         ];
-//     }
-//     return array;
-// };
-// const generateRankingData = () => {
-//     const map = new Map();
-//     const defaultRanking = Array.from({ length: names.length }, (_, i) => i + 1);
-//     for (const year of years) {
-//         console.log(year)
-//         const shuffleArray = shuffle(defaultRanking);
-//         names.forEach((name, i) => {
-//             map.set(name, (map.get(name) || []).concat(shuffleArray[i]));
-//         });
-//     }
-//     return map;
-// };
-// const generateSeriesList = () => {
-//     const seriesList = [];
-//     const rankingMap = generateRankingData();
-//     rankingMap.forEach((data, name) => {
-//         const series = {
-//             name,
-//             symbolSize: 20,
-//             type: 'line',
-//             smooth: true,
-//             emphasis: {
-//                 focus: 'series'
-//             },
-//             endLabel: {
-//                 show: true,
-//                 formatter: '{a}',
-//                 distance: 20
-//             },
-//             lineStyle: {
-//                 width: 4
-//             },
-//             data
-//         };
-//         seriesList.push(series);
-//     });
-//     return seriesList;
-// };
-// const myChart = ref(null);
-// onMounted(() => {
-//     const chartDom = document.getElementById('chart');
-//     myChart.value = echarts.init(chartDom);
-//     const option = {
-//         tooltip: {
-//             trigger: 'item'
-//         },
-//         grid: {
-//             left: 30,
-//             right: 110,
-//             bottom: 30,
-//             containLabel: true
-//         },
-//         toolbox: {
-//             feature: {
-//                 saveAsImage: {}
-//             }
-//         },
-//         xAxis: {
-//             type: 'category',
-//             splitLine: {
-//                 show: true
-//             },
-//             axisLabel: {
-//                 margin: 30,
-//                 fontSize: 16
-//             },
-//             boundaryGap: false,
-//             data: years
-//         },
-//         yAxis: {
-//             type: 'value',
-//             axisLabel: {
-//                 margin: 30,
-//                 fontSize: 16,
-//                 formatter: '#{value}'
-//             },
-//             inverse: true,
-//             interval: 1,
-//             min: 1,
-//             max: names.length
-//         },
-//         series: generateSeriesList()
-//     };
-//     myChart.value.setOption(option);
-// });
-
 onMounted(() => {
     const chartDom = document.getElementById('chart');
     const myChart = echarts.init(chartDom);
@@ -384,6 +272,10 @@ onMounted(() => {
             type: 'bar',
             stack: 'total',
             barWidth: barwidth,
+            label: {
+      show: true,
+      formatter: (params) => Math.round(params.value * 10) / 10 + '%'
+    },
             itemStyle: {
                 color: color[sid]
             },
@@ -550,13 +442,11 @@ const options3 = [
     height: 3px;
     background-color: rgb(118, 118, 118);
     visibility: hidden;
-    /* 初始隐藏 */
     margin-left: 3px;
 }
 
 .select-container:hover .underline {
     visibility: visible;
-    /* 鼠标悬停时显示 */
 }
 
 .square {

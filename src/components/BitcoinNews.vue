@@ -30,124 +30,135 @@
             <el-row>
                 <el-col :span="5" style="margin-top: 15px; margin-left: 10px;">
                     <el-scrollbar class="custom-scrollbar" style="height: 200px; overflow-y: auto;" always>
-                        <div class="select-container">
-                            <div class="select"
-                                style="color: rgb(118,118,118); font-size: 14px; font-weight: 600; margin-left: 10px; margin-bottom: 3px;"
-                                @click="selectAll">Select All
+                        <div style="width: 95%;">
+                            <div class="select-container">
+                                <div class="select"
+                                    style="color: rgb(118,118,118); font-size: 14px; font-weight: 600; margin-left: 10px; margin-bottom: 3px;"
+                                    @click="selectAll">Select All
+                                </div>
+                                <div class="underline" :style="[visibility]"></div>
                             </div>
-                            <div class="underline" :style="[visibility]"></div>
-                        </div>
-                        <div>
-                            <div style="display: flex; align-items: center; margin-top: 8px;">
-                                <div class="square" :style="[styles.unknown, clicked.unknown && styles.clicked]"
-                                    @click="handleClick('unknown')"></div>
+                            <div>
+                                <div style="display: flex; align-items: center; margin-top: 8px;">
+                                    <div class="square" :style="[styles.unknown, clicked.unknown && styles.clicked]"
+                                        @click="handleClick('unknown')"></div>
+                                    <a
+                                        style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Market
+                                        Price</a>
+                                </div>
+                                <div style="font-size: 14px; color: rgb(74,74,74);">
+                                    bitcoinprice market price high watch hit new time volume trading
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.F2Pool, clicked.F2Pool && styles.clicked]"
+                                    @click="handleClick('F2Pool')">
+                                </div>
                                 <a
-                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Market
-                                    Price</a>
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Developers</a>
                             </div>
                             <div style="font-size: 14px; color: rgb(74,74,74);">
-                                bitcoinprice market price high watch hit new time volume trading
+                                block fork network hard core size lightning new segwit2x segwit
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.AntPool, clicked.AntPool && styles.clicked]"
+                                    @click="handleClick('AntPool')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Regulations</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                crypto cryptocurrency bank regulation tax ban government russia central exchange 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.BTCcom, clicked.BTCcom && styles.clicked]"
+                                    @click="handleClick('BTCcom')">
+                                </div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Payments</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                accept payment card btc buy pay debit service coinbase new 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.SlushPool, clicked.SlushPool && styles.clicked]"
+                                    @click="handleClick('SlushPool')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Digital
+                                    currencies</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                currency digital bank money virtual new central world video future 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.DeepBit, clicked.DeepBit && styles.clicked]"
+                                    @click="handleClick('DeepBit')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Technical
+                                    analysis</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                price analysis technical btc bitcoinprice bull market weekly term support 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.BTCGuild, clicked.BTCGuild && styles.clicked]"
+                                    @click="handleClick('BTCGuild')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Hacking</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                gox mt exchange hack user cd hacker attack btc steal 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.ViaBTC, clicked.ViaBTC && styles.clicked]"
+                                    @click="handleClick('ViaBTC')">
+                                </div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Opinions</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                say wall street crypto video ceo investor big buy bubble 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.Poolin, clicked.Poolin && styles.clicked]"
+                                    @click="handleClick('Poolin')">
+                                </div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Interviews</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                video interview audio ceo talk future btc founder andreas money 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.GHashIO, clicked.GHashIO && styles.clicked]"
+                                    @click="handleClick('GHashIO')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Fintech</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                cd startup bank technology tech new fintech payment launch join
+                             </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.BitFury, clicked.BitFury && styles.clicked]"
+                                    @click="handleClick('BitFury')"></div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Illegal
+                                    activities</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                road silk money arrest drug us auction web btc dark 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-top: 20px;">
+                                <div class="square" :style="[styles.others, clicked.others && styles.clicked]"
+                                    @click="handleClick('others')">
+                                </div>
+                                <a
+                                    style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Wallets
+                                    and platforms</a>
+                            </div>
+                            <div style="font-size: 14px; color: rgb(74,74,74);">
+                                wallet app new launch platform user mobile cryptocurrency ethereum payment 
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.F2Pool, clicked.F2Pool && styles.clicked]"
-                                @click="handleClick('F2Pool')">
-                            </div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Developers</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            block fork network hard core <br>
-                            size lightning new segwit2x segwit
-                        </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.AntPool, clicked.AntPool && styles.clicked]"
-                                @click="handleClick('AntPool')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Regulations</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            crypto cryptocurrency bank regulation tax ban government russia central exchange </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.BTCcom, clicked.BTCcom && styles.clicked]"
-                                @click="handleClick('BTCcom')">
-                            </div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Payments</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            accept payment card btc buy pay debit service coinbase new </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.SlushPool, clicked.SlushPool && styles.clicked]"
-                                @click="handleClick('SlushPool')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Digital
-                                currencies</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            currency digital bank money virtual new central world video future </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.DeepBit, clicked.DeepBit && styles.clicked]"
-                                @click="handleClick('DeepBit')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Technical
-                                analysis</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            price analysis technical btc bitcoinprice bull market weekly term support </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.BTCGuild, clicked.BTCGuild && styles.clicked]"
-                                @click="handleClick('BTCGuild')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Hacking</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            gox mt exchange hack user cd hacker attack btc steal </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.ViaBTC, clicked.ViaBTC && styles.clicked]"
-                                @click="handleClick('ViaBTC')">
-                            </div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Opinions</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            say wall street crypto video ceo investor big buy bubble </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.Poolin, clicked.Poolin && styles.clicked]"
-                                @click="handleClick('Poolin')">
-                            </div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Interviews</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            video interview audio ceo talk future btc founder andreas money </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.GHashIO, clicked.GHashIO && styles.clicked]"
-                                @click="handleClick('GHashIO')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Fintech</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            cd startup bank technology tech new fintech payment launch join </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.BitFury, clicked.BitFury && styles.clicked]"
-                                @click="handleClick('BitFury')"></div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Illegal
-                                activities</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            road silk money arrest drug us auction web btc dark </div>
-                        <div style="display: flex; align-items: center; margin-top: 20px;">
-                            <div class="square" :style="[styles.others, clicked.others && styles.clicked]"
-                                @click="handleClick('others')">
-                            </div>
-                            <a
-                                style="font-size: 14px; margin-top: -3px; margin-left: 2px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: 600">Wallets
-                                and platforms</a>
-                        </div>
-                        <div style="font-size: 14px; color: rgb(74,74,74);">
-                            wallet app new launch platform user mobile cryptocurrency ethereum payment </div>
                     </el-scrollbar>
                 </el-col>
                 <el-col :span="18" style="margin-left: 18px; position: relative;">
@@ -396,8 +407,8 @@ const createChart = () => {
         .text(d => d.data.name);
 
     circles.transition()
-        .duration(1000) 
-        .delay((i) => i * 100) 
+        .duration(1000)
+        .delay((i) => i * 100)
         .attr("cx", d => d.x)
         .style("opacity", 1);
 };

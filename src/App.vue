@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row class="row-bg" justify="space-around">
-      <el-col :span="3">
+      <el-col :span="3" style="display: flex; justify-content: center; align-items: center;">
         <el-image style="margin-left: -12px;" fit="cover" :src="url3"></el-image>
       </el-col>
       <el-col :span="16">
@@ -67,6 +67,10 @@
                 <el-radio-button label="Bitcoin statistics" value="2" />
               </el-radio-group>
             </div>
+            <div>
+              <MiningPools v-show="show4" :style="{ height: miningPoolsHeight + 'px' }" />
+              <BitcoinStatistics v-show="show5" :style="{ height: crossPoolingHeight + 'px' }" />
+            </div>
           </div>
         </div>
         <div>
@@ -97,11 +101,13 @@ import { ref, onMounted } from 'vue'
 import github from '@/assets/image/github.png'
 import email from '@/assets/image/email.png'
 import logo from '@/assets/image/logo.jpg'
-import ethereum from '@/assets/image/ethereum.png'
+import ethereum from '@/assets/image/MiningVis_logo.png'
 import TimeAxis from './components/TimeAxis.vue'
 import CrossPooling from './components/CrossPooling.vue'
 import MiningDistribution from './components/MiningDistribution.vue'
 import BitcoinNews from './components/BitcoinNews.vue'
+import BitcoinStatistics from './components/BitcoinStatistics.vue'
+import MiningPools from './components/MiningPools.vue'
 
 onMounted(() => {
   document.body.style.setProperty('--el-color-primary', '#038687');
@@ -119,6 +125,8 @@ const url1 = ref(email)
 const url2 = ref(logo)
 const url3 = ref(ethereum)
 const value5 = ref(1)
+const show4 = ref(true)
+const show5 = ref(false)
 let showPool = ref(1)
 const options5 = [
   {
@@ -148,9 +156,13 @@ const btn_5 = () => {
 
 const handleRadioChange = (value) => {
   if (value === '1') {
-    title.value = 'Mining pools';
+    title.value = 'Mining pools'
+    show4.value = true
+    show5.value = false
   } else if (value === '2') {
-    title.value = 'Bitcoin statistics';
+    title.value = 'Bitcoin statistics'
+    show5.value = true
+    show4.value = false
   }
 };
 

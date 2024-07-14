@@ -27,7 +27,7 @@ const initChart = () => {
     myChart = echarts.init(chartDom);
 
     const staticData = [
-        { name: '2012/01/01', value: ['2012/01/01', 150] },
+        { name: '2011/01/01', value: ['2011/01/01', 150] },
         { name: '2012/12/31', value: ['2012/12/31', 180] },
         { name: '2013/01/01', value: ['2013/01/01', 190] },
         { name: '2013/12/31', value: ['2013/12/31', 170] },
